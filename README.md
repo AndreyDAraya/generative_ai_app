@@ -29,8 +29,22 @@ En este tutorial, demostraremos cómo utilizar la biblioteca `generative_ai` en 
        sdk: flutter
      google_generative_ai: ^0.2.0
    ```
+3. **Agregar las dependencias necesarias**
 
-3. **Crear la interfaz de usuario**
+   Necesitas agregar en un archivo `.env`  GOOGLE_KEY_AI=YOUR_KEY_AI y llamarlo en el `main.dart`
+   
+   ```
+    await dotenv.load();
+
+    final apiKey = dotenv.get('GOOGLE_KEY_AI');
+
+    final generativeAI = GenerativeModel(model: 'gemini-pro', apiKey: apiKey)
+    ..startChat();
+   ```
+
+   * Documentación de la biblioteca `google_generative_ai`: [https://ai.google.dev/tutorials/dart_quickstart?hl=es-419]
+
+4. **Crear la interfaz de usuario**
 
    Cree una interfaz de usuario simple con un campo de texto para ingresar el prompt y un botón para generar el texto.
 
