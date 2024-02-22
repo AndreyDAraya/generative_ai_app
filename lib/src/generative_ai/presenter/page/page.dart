@@ -95,7 +95,7 @@ class _BodyState extends State<_Body> {
                       generateContentResponse: state.generateContentResponse,
                     ),
                     DsVerticalSpace.md,
-                    if (state is ShowLoading || state.isPromtpLoading) ...[
+                    if (state is ShowLoading || state.isPromptLoading) ...[
                       const _LoadingWidget(),
                       DsVerticalSpace.md,
                     ],

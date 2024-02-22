@@ -18,7 +18,7 @@ class GenerativeAIBloc extends Bloc<GenerativeAIEvent, GenerativeAIState>
           const InitialState(
             prompt: '',
             generateContentResponse: '',
-            isPromtpLoading: false,
+            isPromptLoading: false,
           ),
         ) {
     // Set up event listeners
@@ -40,7 +40,7 @@ class GenerativeAIBloc extends Bloc<GenerativeAIEvent, GenerativeAIState>
         NoInternetState(
           prompt: state.prompt,
           generateContentResponse: state.generateContentResponse,
-          isPromtpLoading: state.isPromtpLoading,
+          isPromptLoading: state.isPromptLoading,
         ),
       );
       return;
@@ -51,7 +51,7 @@ class GenerativeAIBloc extends Bloc<GenerativeAIEvent, GenerativeAIState>
       ShowLoading(
         generateContentResponse: '',
         prompt: state.prompt,
-        isPromtpLoading: state.isPromtpLoading,
+        isPromptLoading: state.isPromptLoading,
       ),
     );
 
@@ -63,11 +63,11 @@ class GenerativeAIBloc extends Bloc<GenerativeAIEvent, GenerativeAIState>
       eitherGenerativeAI,
       onError: (e, st) {
         emit(
-          PromtpFailure(
+          promptFailure(
             failure: Failure(message: e.toString()),
             generateContentResponse: state.generateContentResponse,
             prompt: state.prompt,
-            isPromtpLoading: state.isPromtpLoading,
+            isPromptLoading: state.isPromptLoading,
           ),
         );
       },
@@ -75,11 +75,11 @@ class GenerativeAIBloc extends Bloc<GenerativeAIEvent, GenerativeAIState>
         gAI.fold(
           (failure) {
             emit(
-              PromtpFailure(
+              promptFailure(
                 failure: failure,
                 generateContentResponse: state.generateContentResponse,
                 prompt: state.prompt,
-                isPromtpLoading: state.isPromtpLoading,
+                isPromptLoading: state.isPromptLoading,
               ),
             );
           },
@@ -89,7 +89,7 @@ class GenerativeAIBloc extends Bloc<GenerativeAIEvent, GenerativeAIState>
                 generateContentResponse: [state.generateContentResponse, res]
                     .fold('', (pv, newtext) => pv + newtext),
                 prompt: event.prompt,
-                isPromtpLoading: true,
+                isPromptLoading: true,
               ),
             );
           },
@@ -98,10 +98,10 @@ class GenerativeAIBloc extends Bloc<GenerativeAIEvent, GenerativeAIState>
     );
 
     emit(
-      IsLoadingPromtp(
+      IsLoadingprompt(
         generateContentResponse: state.generateContentResponse,
         prompt: state.prompt,
-        isPromtpLoading: false,
+        isPromptLoading: false,
       ),
     );
   }

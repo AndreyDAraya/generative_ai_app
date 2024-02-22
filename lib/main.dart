@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 void main() async {
   /// Loads environment variables from a .env file into your root of Flutter application.
   /// Example of file .env:
-  /// GOOGLE_KEY_AI=TU_CLAVE_API
+  /// GOOGLE_KEY_AI=YOUR_KEY_API
 
   await dotenv.load();
 

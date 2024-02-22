@@ -11,7 +11,7 @@ class BoxSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SearchBar(
-      hintText: 'Writte a promt here...',
+      hintText: 'Write a prompt here...',
       controller: searchController,
       backgroundColor:
           MaterialStateProperty.resolveWith((states) => Colors.white),
