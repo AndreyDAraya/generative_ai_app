@@ -1,4 +1,5 @@
 ## Flutter App con Generative AI: Ejemplo Básico
+<img src="assets/app.png" alt="App Image" width="200"/>
 
 **Introducción**
 
