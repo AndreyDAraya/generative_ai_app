@@ -3,7 +3,7 @@
 
 **Introducción**
 
-En este tutorial, demostraremos cómo utilizar la biblioteca `generative_ai` en una aplicación Flutter para generar texto a partir de un prompt.
+En este tutorial, demostraremos cómo utilizar la biblioteca `google_generative_ai` en una aplicación Flutter para generar texto a partir de un prompt.
 
 **Requisitos previos**
 
@@ -32,7 +32,7 @@ En este tutorial, demostraremos cómo utilizar la biblioteca `generative_ai` en 
 3. **Agregar las dependencias necesarias**
 
    Necesitas agregar en un archivo `.env`  GOOGLE_KEY_AI=YOUR_KEY_AI y llamarlo en el `main.dart`
-   
+
    ```
     await dotenv.load();
 
